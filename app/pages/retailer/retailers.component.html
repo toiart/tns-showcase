@@ -1,0 +1,22 @@
+<!--
+<ActionBar title="My App" class="action-bar">
+</ActionBar>
+<StackLayout class="page">
+    <ListView [items]="retailers" class="list-group">
+        <template let-retailer="item">
+            <Label [text]="retailer.name"
+                class="list-group-item"></Label>
+        </template>
+    </ListView>
+</StackLayout>
+-->
+<sc-showcase-layout title="Retailer List">
+    <StackLayout>
+        <ListView [items]="retailers" class="list-group">
+            <template let-retailer="item">
+                <Label [text]="retailer.name"
+                    class="list-group-item"></Label>
+            </template>
+        </ListView>
+    </StackLayout>
+</sc-showcase-layout>

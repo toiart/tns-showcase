@@ -1,0 +1,13 @@
+<sc-showcase-layout title="LOGIN">
+    <GridLayout>
+        <StackLayout #modal class="stable small-rounded center fill-width" automationText="loginModal">
+            <Label [text]="isLogin ? 'LOG IN' : 'SIGN IN'" class="h4 s-margin" automationText="modalTitle"></Label>
+            <TextField #email [text]="model.email" (textChange)="model.email = email.text" hint="Email" class="light s-margin" automationText="emailField"></TextField>
+            <TextField #pass [text]="model.password" (textChange)="model.password = pass.text" hint="Password" secure="true" class="light s-margin" automationText="passField"></TextField>
+            <TextField #passCheck *ngIf="!isLogin" [text]="model.passwordCheck" (textChange)="model.passwordCheck = passCheck.text" hint="Confirm password" secure="true" class="light s-margin" automationText="passCheckField"></TextField>
+            <Button *ngIf="isLogin" text="Log in" class="button primary s-margin" (tap)="login(model.email, model.password)" automationText="loginButton"></Button>
+            <Button *ngIf="!isLogin" text="Go back" class="button primary s-margin" (tap)="toggle()" automationText="goBackButton"></Button>
+            <Button text="Sign in" class="button light s-margin" (tap)="signin()" automationText="signInButton"></Button>
+        </StackLayout>
+    </GridLayout>
+</sc-showcase-layout>
